@@ -151,7 +151,7 @@ function main(){
   };
   if(sessionStorage.getItem('matt') === 'Mechanics 1'){
     document.getElementById("figure").style.display = 'block';
-    document.getElementById("figure").setAttribute("src", `./media/${questions[counter][6]}.jpg`);
+    document.getElementById("figure").setAttribute("src", `./media/${questions[counter][8]}.jpg`);
   };
 };
 main();

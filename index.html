@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="home.css">
+  <title>Wood</title>
+</head>
+<body>
+  <div class="header flex-h">
+    <img src="logo.png" alt="logo" height="65">
+  </div>
+  <div class="main flex-v">
+    <h2 class="title slide-start">Haii~ :D</h2>
+    <div class="organizer flex-v">
+      <h1 class="main-title slide-start">Quizat list</h1>
+      <div class="flex-h uno">
+
+        <div class="comp slide-start flex-v">
+          <div class="progress flex-v">
+            <p class="percentage" id="rator">50%</p>
+          </div>
+          <p class="yap">success rate</p>
+          <p class="sub" id="right" style="color: var(--main-green);"></p>
+          <p class="sub" id="wrong" style="color: var(--main-red);"></p>
+          <p class="sub" id="streak" style="color: var(--accent);">Streak:</p>
+          <p class="sub" id="timed" style="color: var(--lite-green);"></p>
+        </div>
+
+        <div class="cards">
+          <div class="slide-start card flex-v">
+            <h3 class="sub-title">Math 1</h3>
+            <p class="yap">unpatched (yet) GPA farming method</p>
+            <button class="main-btn" id="math">Practice</button>
+          </div>
+
+          <div class="slide-start card flex-v">
+            <h3 class="sub-title">Physics 1</h3>
+            <p class="yap">wth is thermodynamics even about</p>
+            <button class="main-btn" id="physics">Practice</button>
+          </div>
+
+          <div class="slide-start card flex-v">
+            <h3 class="sub-title">Statics</h3>
+            <p class="yap">what will you have after 500 supports</p>
+            <button class="main-btn" id="stat">Practice</button>
+          </div>
+
+          <div class="slide-start card flex-v">
+            <h3 class="sub-title">Chemistry</h3>
+            <p class="yap">It's actually not that bad if you squint really hard</p>
+            <button class="main-btn" id="chem">Practice</button>
+          </div>
+
+          <div class="slide-start card flex-v">
+            <h3 class="sub-title">Tech writing</h3>
+            <p class="yap">"yo chat gpt do this assignment with 15% error margin"ahh course</p>
+            <button class="main-btn" id="tech">Practice</button>
+          </div>
+
+          <div class="slide-start card flex-v">
+            <h3 class="sub-title">History&Cont issues</h3>
+            <p class="yap">the two in one special</p>
+            <button class="main-btn" id="67">Practice</button>
+          </div>
+
+          <div class="slide-start card flex-v">
+            <h3 class="sub-title">Manufacturing</h3>
+            <p class="yap">kinda forgot it even existed lwk</p>
+            <button class="main-btn" id="manuf">Practice</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer flex-v">المفروض انه فوتر بس انا مكسل</div>
+  </div>
+
+
+  <script>
+    function scrollAnimation(hide,show,repeated,del=0){
+      const observer = new IntersectionObserver((entries => {
+        entries.forEach(entry => {
+          if (repeated) {
+            if (entry.isIntersecting) {
+              setTimeout(del)
+              entry.target.classList.add(show)
+            }else {
+              entry.target.classList.remove(show);}
+          }
+          else {
+            if (entry.isIntersecting) {
+              setTimeout(del)
+              entry.target.classList.add(show)}}
+        });
+      }))
+
+      const hiddenElements = document.querySelectorAll('.'+hide);
+      hiddenElements.forEach((el) => observer.observe(el));
+    }
+
+    scrollAnimation('slide-start', 'slide-end', false);
+  </script>
+  <script src="home.js"></script>
+</body>
+</html>

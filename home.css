@@ -1,0 +1,129 @@
+.slide-start{
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 2s;
+}
+.slide-end{
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+.title{
+  color: var(--sect-clr);
+  font-size: var(--sp-lrg);
+}
+
+.uno{
+  flex-direction: row-reverse;
+  gap: var(--sp-med);
+  flex-wrap: nowrap;
+  align-items: normal;
+}
+
+.comp{
+  width: 250px;
+  min-height: 150px;
+  height: fit-content;
+  border: none;
+  border-radius: 8px;
+  margin: var(--sp-1xl);
+  margin-top: 0;
+  box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.05);
+  padding: var(--sp-lrg);
+}
+
+@media(max-width: 635px) {
+  .uno{flex-wrap: wrap;}
+}
+
+.organizer{
+  width: clamp(200px, 80vw, max-content);
+  height: fit-content;
+}
+
+.sub-title{
+  font-size: var(--sp-1xl);
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  margin-bottom: var(--sp-med);
+}
+.yap{
+  font-size: var(--sp-nrm);
+  color: var(--sect-clr);
+  margin-top: var(--sp-lil);
+}
+
+.progress{
+  --p: 10;   /* It's finally working!(4 future me plz don't touch) */
+  width: 69px;
+  height: 69px;
+  border-radius: 50%;
+  background-color: var(--bg-clr);
+  margin: var(--sp-lil);
+  position: relative;
+}
+.progress::before{
+  content: '';
+  width: 79px;
+  height: 79px;
+  position: absolute;
+  box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, .15);
+  border-radius: 50%;
+  z-index: -1;
+  bottom: -5px;
+  right: -5px;
+}
+.progress::after {
+  content: '';
+  --angle: 0deg;
+  width: 79px;
+  height: 79px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  bottom: -5px;
+  right: -5px;
+  background-image: conic-gradient(
+    transparent 0deg,
+    transparent calc(360deg - var(--angle)),
+    var(--main-green) 0deg,
+    var(--main-green) var(--angle)
+  );
+
+  animation: radial 1.5s forwards linear;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes radial {
+  to { --angle: calc(var(--p) * 1deg);}
+}
+
+.percentage{
+  font-size: var(--sp-lrg);
+  font-family: monospace;
+  color: var(--main-green);
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.sub{
+  font-weight: bold;
+  font-size: var(--sp-nrm);
+  padding: var(--sp-med);
+  width: 100%;
+}
+
+.footer{
+  background-color: var(--text-clr);
+  color: var(--bg-clr);
+  height: 500px;
+  width: 100%;
+  margin-top: 100px;
+}
